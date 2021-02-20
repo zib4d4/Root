@@ -1,27 +1,13 @@
------BEGIN RSA PRIVATE KEY-----
-MIIEowIBAAKCAQEA1eb2BX4CJr5V0PX9rY9Fdq/skdwNmYK9xMB4pw7CRy0LyRpz
-1kS1xUJ/CXaFFSJoJDjvGOD8C4xDDi33qC5GPJHKEJapcEzSC6j3cxQP5VXptGsL
-C1tJm/4QxzVvrJWkGzR8mo4ZQGMFhKws9WroGmVgLilbn36Gr/lPaUmlx06TWbsv
-9+o/xrigLbPmDO5ntWKeZA0mIz34cPL7iP19ImtoCa6ljKq70SOOprxPhZZIpgaS
-aEx/jTQQOGml3oAASNK1I9vyav11Yrg3e+VDK8azG4ciWHh5qts5QBW8ZEoB1izQ
-WiQ9LiHr3PnLgk5OafNHITNNqcI019HGmkkTpwIDAQABAoIBAQCLAcNUImWHhB4E
-5DfteLQtw3o7+AOmhX6JxIMkHcVHuBB2qogo8RInlWU1Yx5tc6S2FYHcaymg35Ac
-QOc3FotyhVQJn7+RSXsfNLlKwfjqkwCDzSSqRrL5ewywSRu/zqeNPnjTgBEM9Mz7
-QWEeRFF+Be+RUDNI3VLuPVjMFZ50fH21TLxwnkA+tMeshYPl5mXsf/2KhfZcS66B
-ddvhU7UzaErAWY2N6youl0saZbthYqJ/e98mcY4KWMPDkWniPgpRC6vh0CHS8Sp6
-u4hUEIeZOYhzHLqju+umvdNq2x29GZNRCQJnxqV3hSMJykwHggdF70SOv07hb9OF
-Xch3R2CxAoGBAO6TAgI6tAaZbS+ZxbtQPyUA3EdjAniYjZ72jXCghK2Oi8dIZJEu
-DZ8DhC0c8Zlpg9OzoHC8NwqOJnHmFCoUEWROJ5sUWLUedwCGEx1dhx0BPHaUxtyc
-M5Wfn9Fz/VV/dW7POegYdkWhjQ2p06FaLNl4zXEhz1l6w2wOLsZc/Y/lAoGBAOWG
-nxr6LmRgduhXW73G2mUnV/XUk6iiqOEZVQE92g/7kBqmdJCCAEEJrHNIs63nej1x
-Qrxyy/En7w8R+adiFcQsQe5mt56nyYpegI/fZLoX7HqaH2/YJNIjxXLUN/26RBih
-rUskO3pRsjKDhHmoIugfBNuTV1JFrP7gr7Jef+SbAoGAOuSLUGWRXzesnl2FVDIB
-BG9r8StdxstR2nXegHj/h6BynOUf/j6yGhjSHhjRAx/q7O2go3Oy2qYwk1lKjQCb
-MnmgiUXCiCNXGQf/2/XkjqJpfJRJatgcW8kluJy7YsmuAYaiMssnFxVELqVHmsMZ
-4y1Q+aZw+xO0/g2aOllmNokCgYBE4qtbuFw2CfGF97nz8ftXwoAWqo8KXI8cx7KI
-ZdzNUS3FodF4EVwsKNAV5WrvtXoteJGT50wn+1k3B6kKwFhSAQpkl3Via28EVSp2
-g5BCfa2eeiUXNyKN4uh+dwy63K1VSyisVZp4Mo6ttGUM8hZP3gdiMw1RBtJNyHdS
-rCPsIwKBgG3WgUwpRI/cVjcMBxGKcDuFZXswKBo3G+Lh/t0rIafIfXi2YqknxjGl
-GkHmad2jua9dA0EwVq9lkyH2pbWUpqqrYU/TaAqQpMrbJ9aA2rEt0rae4VGqBsdm
-Fv0XxaB1B7X52TcYmUTK+vcB3erL3IvAC7A2jtReQSlS2cSN4uwm
------END RSA PRIVATE KEY-----
+# Use the latest 2.1 version of CircleCI pipeline process engine. See: https://circleci.com/docs/2.0/configuration-reference
+version: 2.1
+# Use a package of configuration called an orb.
+orbs:
+  # Declare a dependency on the welcome-orb
+  welcome: circleci/welcome-orb@0.4.1
+# Orchestrate or schedule a set of jobs
+workflows:
+  # Name the workflow "welcome"
+  welcome:
+    # Run the welcome/run job in its own container
+    jobs:
+      - welcome/run
